@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row mt-5 mb-5 shadow">
+        <div class="col-lg-6 shadow p-3">
+            <h3>Créer votre compte</h3>
+            <form action="/register" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <div class="form-group">
+                    <label for="exampleInputtext1">Prénoms</label>
+                    <input type="text" class="form-control" id="exampleInputtext1" aria-describedby="textHelp">
+                    
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputtext1">Nom</label>
+                    <input type="text" class="form-control" id="exampleInputtext1" aria-describedby="textHelp">
+                    
+                  </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Adresse Email</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <small id="emailHelp" class="form-text text-muted">Nous n'allons jamais partager votre email.</small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Mot de passe</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Répeter votre Mot de passe</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                  </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">selectionnez</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Créer votre compte</button>
+              </form>
+        </div>
+        <div class="col-lg-6">
+            <img src="https://www.roadtrippin.fr/image/spot/3x2-900/hotel.jpg" alt="" >
+        </div>
+    </div>
+</div>
+{% endblock %}
